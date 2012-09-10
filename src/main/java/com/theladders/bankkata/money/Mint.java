@@ -12,10 +12,10 @@ public class Mint
   {
     return new Money(dollars, cents, Type.credit());
   }
-  
+
   public Money printNothing()
   {
-    return new Money(0, 0, Type.credit());
+    return new Money(0, 0, Type.debit());
   }
 
 }

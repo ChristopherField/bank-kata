@@ -1,4 +1,4 @@
-package com.theladders.bankkata.transaction;
+package com.theladders.bankkata.exception;
 
 public class InsufficientFunds extends Exception
 {

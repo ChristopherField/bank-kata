@@ -35,4 +35,8 @@ public class AccountNumber
     return number.hashCode();
   }
 
+  public String toString()
+  {
+	  return number;
+  }
 }

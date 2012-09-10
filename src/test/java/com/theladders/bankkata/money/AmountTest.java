@@ -98,5 +98,14 @@ public class AmountTest
    
   }
   
+  @Test
+  public void testCompareTo()
+  {
+	  Amount amountOne = new Amount(35, 20);
+	  Amount amountOne2 = new Amount(35, 20);
+	  assertEquals(0, amountOne.compareTo(amountOne));
+	  assertEquals(0, amountOne.compareTo(amountOne2));
+	  assertEquals(1, amountOne.compareTo(amountOne.negate()));
+  }
 
 }
