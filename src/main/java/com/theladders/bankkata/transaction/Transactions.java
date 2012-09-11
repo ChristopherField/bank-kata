@@ -24,11 +24,9 @@ public class Transactions {
 	}
 
 	// worth extra for type safe filter that satisfies closure property
-	public Transactions filter(TransactionFilter filter)
-	{
+	public Transactions filter(TransactionFilter filter) {
 		Transactions filteredList = new Transactions();
-		for (Transaction transaction: transactions)
-		{
+		for (Transaction transaction : transactions) {
 			addFiltered(filteredList, filter, transaction);
 		}
 		return filteredList;
@@ -43,11 +41,9 @@ public class Transactions {
 		return output;
 	}
 
-	public Money computeBalance(Time time)
-	{
+	public Money computeBalance(Time time) {
 		Money balance = (new Mint()).printNothing();
-		for (Transaction transaction: transactions)
-		{
+		for (Transaction transaction : transactions) {
 			balance = transaction.accumulateBalance(balance);
 		}
 		return balance;

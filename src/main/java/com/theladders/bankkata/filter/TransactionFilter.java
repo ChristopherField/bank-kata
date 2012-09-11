@@ -12,6 +12,11 @@ public class TransactionFilter {
 
 	}
 
+	public static TransactionFilter getNoFilter() {
+		return new TransactionFilter(DateRange.allDates(),
+				TypeFilter.allTypes());
+	}
+
 	public boolean meetsCriteria(Transaction transaction) {
 		boolean datePass = transaction.withinRange(dateFilter);
 		boolean typePass = typeFilter.meetsCriteria(transaction);

@@ -16,7 +16,7 @@ public class Transaction {
 		this.money = money;
 	}
 
-	Money accumulateBalance(Money currentBalance) {
+	public Money accumulateBalance(Money currentBalance) {
 		return currentBalance.add(money);
 	}
 

@@ -14,17 +14,9 @@ public class TransactionAmount implements com.theladders.bankkata.transaction.Tr
 	public static class AmountRetriever implements com.theladders.bankkata.money.MoneyViolator {
 
 		public Object violate( Amount amount, Type type) {
-			return amount.violate(new AmountFormatter());		
+			return amount.violate(new AmountDisplayer());		
 		}
 	}
-	public static class AmountFormatter implements com.theladders.bankkata.money.AmountViolator {
-		public Object violate(int dollars, int cents)
-		{
-			String leadingZero = "";
-			if (cents < 10)
-				leadingZero = "0";
-			return "" + dollars + "." + leadingZero + cents;
-		}
-	}
+
 
 }

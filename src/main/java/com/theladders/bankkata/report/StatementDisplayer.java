@@ -4,14 +4,22 @@ import java.util.Map;
 import java.util.List;
 import java.util.TreeMap;
 import java.util.LinkedList;
+
+import com.theladders.bankkata.Account;
 import com.theladders.bankkata.report.violators.TransactionAmount;
 import com.theladders.bankkata.report.violators.TransactionDate;
 
 
 import com.theladders.bankkata.transaction.Transaction;
 import com.theladders.bankkata.transaction.Transactions;
-public class DailyTransactions {
+public class StatementDisplayer {
+	private Account account;
 	private Map<String, Transactions> dailyMap = new TreeMap<String, Transactions>();
+	
+	public StatementDisplayer(Account account)
+	{
+		this.account = account;
+	}
 	public void add(Transaction transaction)
 	{
 		TransactionDate dateGetter = new TransactionDate();
@@ -34,11 +42,15 @@ public class DailyTransactions {
 		
 	}
 
-	private void displayTransactionList(TransactionDisplayer displayer, PrintStream stream)
+	public void display(TransactionDisplayer displayer, PrintStream stream)
 	{
+		stream.println("******** STATEMENT FOR " + account + "***************************");
+		stream.println("Trans Date : Amount : Balance");
+		stream.println("-----------------------------");
 		for (Transactions transactions: dailyMap.values())
 		{
 			displayDaily(stream, displayer, transactions);
 		}
+		stream.println("**************** END STATEMENT FOR " + account + "***************");
 	}
 }

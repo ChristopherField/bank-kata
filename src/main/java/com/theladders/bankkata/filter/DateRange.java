@@ -11,6 +11,11 @@ public class DateRange {
 		this.to = to;
 	}
 	
+	public static DateRange allDates()
+	{
+		return new DateRange(Time.MIN_TIME, Time.MAX_TIME);
+	}
+	
 	public boolean meetsCriteria(Time check)
 	{
 		if (from.compareTo(check) <= 0 && to.compareTo(check) >= 0)

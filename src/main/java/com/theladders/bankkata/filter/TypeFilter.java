@@ -13,6 +13,10 @@ public class TypeFilter {
   {
 	  this.type = null;
   }
+  public static TypeFilter allTypes()
+  {
+	  return new TypeFilter(null);
+  }
   public boolean meetsCriteria(Transaction transaction)
   {
 	  boolean isDeposit = transaction.isDeposit();

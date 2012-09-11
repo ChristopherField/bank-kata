@@ -32,7 +32,7 @@ public class Time implements Comparable<Time> {
 
 	@Override
 	public String toString() {
-		DateFormat formatter = new SimpleDateFormat("YYYY-MM-dd");
+		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		return formatter.format(time);
 	}
 
